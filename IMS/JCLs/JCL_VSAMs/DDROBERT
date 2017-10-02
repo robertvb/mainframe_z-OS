@@ -1,0 +1,24 @@
+//IBMUSERB JOB (ACCT-INFO),'DB2 ADMIN BIND',   
+// CLASS=A,                                    
+// MSGCLASS=X,                                 
+// REGION=0M,                                  
+// NOTIFY=&SYSUID                              
+//IDCAMS   EXEC PGM=IDCAMS                     
+//SYSPRINT DD SYSOUT=*                         
+//SYSIN   DD *                                 
+ DELETE DDALFADA                        
+ SET MAXCC=0                                   
+ DEFINE CLUSTER( NAME(DDROBERT) -         
+         RECOVERY -                            
+         NOERASE -                             
+         SHAREOPTIONS(1 3) -                   
+  VOLUME(ZAIMS1  ) -                           
+         NONINDEXED    ) -                     
+         DATA(NAME(DDROBERT.DATA ) -       
+          CYLINDERS(10 10) -                   
+          BUFFERSPACE(4096) -            
+          CONTROLINTERVALSIZE(2048) -    
+         FREESPACE(0 0) -                
+          RECORDSIZE(2041 2041) -        
+          NONSPANNED   )                 
+/*

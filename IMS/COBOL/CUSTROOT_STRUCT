@@ -1,0 +1,5 @@
+01  CUSTROOT.
+   05 CUSACTNO              	PIC X(8).
+   05 CUSNAME         			PIC X(15).
+   05 CUSADDR           		PIC X(40).
+   05 CUSBLNK          			PIC X(35).

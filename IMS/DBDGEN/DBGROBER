@@ -1,0 +1,21 @@
+***********************************************************             00010009
+* DEFINICION DE LA BASE DE DATOS ROBERT	        (DATOS) *               00020009
+***********************************************************             00030009
+*                                                                       00040009
+         PRINT NOGEN                                                    00050009
+*                                                                       00060009
+         DBD    NAME=DBROBERT,ACCESS=HDAM                               00070009
+         DATASET DD1=DDROBERT,DEVICE=9345,SCAN=0,SIZE=4096,            *00080009
+               FRSPC=(0,20)                                             00081009
+*                                                                       00082009
+         SEGM   NAME=RAIZ,PARENT=0,BYTES=123,PTR=TB                     00083010
+         FIELD  NAME=RFIELD1,BYTES=47,START=1,TYPE=C                    00084009
+         SEGM   NAME=HIJO1,PARENT=RAIZ,BYTES=99                         00085009
+         FIELD  NAME=H1FIELD1,BYTES=20,START=1,TYPE=C                   00086009
+         SEGM   NAME=HIJO2,PARENT=RAIZ,BYTES=49                         00087009
+         FIELD  NAME=H2FIELD1,BYTES=2,START=1,TYPE=C                    00088009
+         FIELD  NAME=H2FIELD2,BYTES=10,START=17,TYPE=C                  00089009
+*                                                                       00090009
+         DBDGEN                                                         00100009
+         FINISH                                                         00110009
+         END                                                            00120009

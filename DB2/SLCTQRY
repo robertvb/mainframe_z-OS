@@ -1,0 +1,17 @@
+//IBMUSERB JOB (ACCT-INFO),'DB2 ADMIN BIND',   
+// CLASS=A,                                    
+// MSGCLASS=X,                                 
+// REGION=0M,                                  
+// NOTIFY=&SYSUID                              
+//RUNTEP2 EXEC PGM=IKJEFT01,DYNAMNBR=20        
+//STEPLIB  DD DSN=DSN910.SDSNLOAD,DISP=SHR     
+//SYSTSPRT DD SYSOUT=*                         
+//SYSTSIN  DD *                                
+ DSN SYSTEM(DB9G)                              
+ RUN  PROGRAM(DSNTEP2) PLAN(DSNTEP91)-         
+      PARMS('/ALIGN(LHS) MIXED TOLWARN(YES)') -
+       LIB('DSN910.DB9G.RUNLIB.LOAD')          
+//SYSPRINT DD SYSOUT=*                         
+//SYSUDUMP DD SYSOUT=*                         
+//SYSIN    DD *                                
+SELECT * FROM APPLOG.PROVINCE;                                                             
